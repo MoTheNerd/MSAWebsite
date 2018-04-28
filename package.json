@@ -1,0 +1,23 @@
+{
+  "name": "msawebsite",
+  "version": "1.0.0",
+  "description": "Muslim Student's Association at the University of Alberta website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoyalKingMomo/MSAWebsite.git"
+  },
+  "author": "Mohammad Al-Ahdal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoyalKingMomo/MSAWebsite/issues"
+  },
+  "homepage": "https://github.com/RoyalKingMomo/MSAWebsite#readme",
+  "dependencies": {
+    "ejs": "^2.5.9",
+    "express": "^4.16.3"
+  }
+}
