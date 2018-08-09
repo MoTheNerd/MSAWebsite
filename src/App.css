@@ -18,7 +18,7 @@
   transition: all 0.35s;
 }
 
-#nav :hover {
+#nav li :hover {
   border-bottom-color: #333333 !important;
   padding-bottom: 5px;
   transition: all 0.35s;
@@ -29,6 +29,10 @@
   color: #333333;
   font-weight: 700 !important;
   text-transform: uppercase;
+  transition: all 0.35s;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
 }
 
 #nav #active {
