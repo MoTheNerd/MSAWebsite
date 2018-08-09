@@ -1,28 +1,49 @@
-.App {
-  text-align: center;
+/*call this from className*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+:root, a, li, p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* NAV BAR */
+
+#nav li {
+  margin: 0 2.5% 0 2.5%;
+  display: inline;
+  padding: 5px 5px 10px 5px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  transition: all 0.35s;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#nav :hover {
+  border-bottom-color: #333333 !important;
+  padding-bottom: 5px;
+  transition: all 0.35s;
 }
 
-.App-title {
-  font-size: 1.5em;
+#nav li a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700 !important;
+  text-transform: uppercase;
 }
 
-.App-intro {
-  font-size: large;
+#nav #active {
+  padding: 5px 5px 5px 5px !important;
+  background-color: #333333 !important;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#nav #active a {
+  color: #DDDDDD;
+}
+
+#nav {
+  position: absolute;
+  top: 25px;
+  display: flex;
+  flex-direction: row-reverse;
 }
