@@ -1,14 +1,15 @@
 /*call this from className*/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-:root, a, li, p, h1, h2, h3, h4, h5, h6 {
+:root, a, .li, p, h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  margin-top: 0;
 }
 
 /* NAV BAR */
 
-#nav li {
+#nav .li {
   margin: 0 2.5% 0 2.5%;
   display: inline;
   padding: 5px 5px 10px 5px;
@@ -16,6 +17,10 @@
   border-bottom-style: solid;
   border-bottom-color: transparent;
   transition: all 0.35s;
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700 !important;
+  text-transform: uppercase;
 }
 
 #nav li :hover {
@@ -41,13 +46,19 @@
   border: none;
 }
 
-#nav #active a {
+#nav #active {
   color: #DDDDDD;
 }
 
 #nav {
-  position: absolute;
+  position: fixed;
   top: 25px;
+  right: 25px;
   display: flex;
   flex-direction: row-reverse;
+}
+
+.mainContainer {
+  background-color: bisque; 
+  padding: 5em 2em 2em 2em;
 }

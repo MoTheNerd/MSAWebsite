@@ -1,28 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { Route } from 'react-router'
-import { BrowserRouter, Switch } from 'react-router-dom'
-
-import AboutScreen from './screens/AboutScreen';
-import EventsScreen from './screens/EventsScreen';
-import HomeScreen from './screens/HomeScreen';
-import ProfileScreen from './screens/ProfileScreen';
-
+import React from 'react'
+import { render, unmountComponentAtNode } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router'
+import store, { history } from './store'
+import App from './containers/app'
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <BrowserRouter>
-        <Switch>
-            <Route path="/about" component={AboutScreen} />
-            <Route path="/events" component={EventsScreen} />
-            <Route path="/profile" component={ProfileScreen} />
-            <Route path="/" component={HomeScreen} />
-        </Switch>
-    </BrowserRouter>,
+  render(
+    <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <App />
+      </div>
+    </ConnectedRouter>
+  </Provider>,
     // <App store={store} />,
     div
 );
-  ReactDOM.unmountComponentAtNode(div);
+  unmountComponentAtNode(div);
 });

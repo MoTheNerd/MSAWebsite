@@ -1,12 +1,30 @@
-import React from 'react';
-import NavBar from '../components/NavBar'
+import React from 'react'
+import { push } from 'connected-react-router'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { CommonContainer } from '../components/Common';
 
-export default class AboutScreen extends React.Component {
-    render(){
+class AboutScreen extends React.Component {
+    render() {
         return (
-            <div>
-                <NavBar active="about" />
-            </div>
+            <CommonContainer>
+                <h1>About</h1>
+                <p>Welcome about!</p>
+            </CommonContainer>
         );
     }
 }
+
+function mapStateToProps(state, props) {
+    return {
+        
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return (
+        bindActionCreators({}, dispatch)
+    )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutScreen)
