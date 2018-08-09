@@ -38,7 +38,9 @@ function mapStateToProps(state, props) {
 }
 
 function mapDispatchToProps(dispatch) {
-  bindActionCreators({}, dispatch)
+  return (
+    bindActionCreators({ }, dispatch)
+  )
 }
 
 export default connect(
