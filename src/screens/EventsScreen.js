@@ -1,12 +1,35 @@
-import React from 'react';
-import NavBar from '../components/NavBar'
+import React from 'react'
+import { push } from 'connected-react-router'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { CommonContainer } from '../components/Common';
 
-export default class EventsScreen extends React.Component {
+class EventScreen extends React.Component {
     render() {
         return (
-            <div>
-                <NavBar active="events" />
-            </div>
+            <CommonContainer>
+                <h1>Events</h1>
+                <p>Welcome events!</p>
+            </CommonContainer>
         );
     }
 }
+
+function mapStateToProps(state, props) {
+    return {
+        monday: state.general.monday,
+        tuesday: state.general.tuesday,
+        wednesday: state.general.wednesday,
+        thursday: state.general.thursday,
+        friday: state.general.friday,
+        jummah: state.general.jummah,
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return (
+        bindActionCreators({}, dispatch)
+    )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventScreen)
