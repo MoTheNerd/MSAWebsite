@@ -7,6 +7,8 @@ import App from './containers/app'
 
 import './App.css'
 
+require('dotenv')
+
 const target = document.querySelector('#root')
 
 render(
