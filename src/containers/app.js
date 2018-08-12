@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <header id="nav">
+        <header style={{ zIndex: 9999 }} id="nav">
           <Link id={this.props ? this.props.currentPathName === '/profile' ? "active" : null : null} className="li" to="/profile">Profile</Link>
           <Link id={this.props ? this.props.currentPathName === '/events' ? "active" : null : null} className="li" to="/events">Events</Link>
           <Link id={this.props ? this.props.currentPathName === '/about' ? "active" : null : null} className="li" to="/about">About</Link>
@@ -39,7 +39,7 @@ function mapStateToProps(state, props) {
 
 function mapDispatchToProps(dispatch) {
   return (
-    bindActionCreators({ }, dispatch)
+    bindActionCreators({}, dispatch)
   )
 }
 
