@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@blueprintjs/core": "^3.2.0",
     "ajv": "^6.5.2",
     "axios": "^0.18.0",
     "connected-react-router": "^4.3.0",
     "dotenv": "^6.0.0",
+    "grommet": "^1.11.0",
+    "grommet-css": "^1.6.0",
     "history": "^4.7.2",
     "moment": "^2.22.2",
     "q": "^1.5.1",
