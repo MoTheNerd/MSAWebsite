@@ -28,12 +28,27 @@ class ProfileScreen extends React.Component {
                 <span style={{ height: "0.5em" }} />
                 <Button title="Forgot Username?" minimal>Forgot password?</Button>
                 <span style={{ height: "3em" }} />
-                <ButtonGroup large onMouseEnter={() => { console.log("hi") }}>
-                    <Button onMouseDown={(this.props.authActions.signUp({
-                        email: "mkaa00x@live.co.uk",
-                        password: "fakkkkkkeeee3"
-                    }))} className="bp3-intent-warning" icon="edit">Signup</Button>
-                    <Button className="bp3-intent-success" icon="arrow-right">Login</Button>
+                <ButtonGroup large>
+                    <Button onMouseDown={() => {
+                        this.props.authActions.signUp({
+                            email: "mkaa00x@live.co.uk",
+                            password: "fakkkkkkeeee3",
+                            name: "Mohammad Al-Ahdal",
+                            role: 0,
+                            description: "I love coding. Heck, I made this website.",
+                            discipline: {
+                                year: 3,
+                                faculty: "Engineering",
+                                specialization: "Electrical",
+                            },
+                        })
+                    }} className="bp3-intent-warning" icon="edit">Signup</Button>
+                    <Button onMouseDown={() => {
+                        this.props.authActions.signIn({
+                            email: "mkaa00x@live.co.uk",
+                            password: "fakkkkkkeeee3",
+                        })
+                    }} className="bp3-intent-success" icon="arrow-right">Login</Button>
                 </ButtonGroup>
             </Article>
         );

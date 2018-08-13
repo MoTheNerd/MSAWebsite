@@ -13,7 +13,7 @@ function* _getPrayerTimes() {
             break;
         } catch (err) {
             console.error(err);
-            console.log('_garage retry #' + (i + 1) + '. Next retry will happen after ' + n.WAIT_TIME + ' milliseconds.');
+            console.log('_general retry #' + (i + 1) + '. Next retry will happen after ' + n.WAIT_TIME + ' milliseconds.');
             if (i < n.MAX_RETRIES - 1) {
                 yield call(delay, n.WAIT_TIME);
             }
@@ -33,7 +33,7 @@ function* _setPrayerTimes(action) {
             break;
         } catch (err) {
             console.error(err);
-            console.log('_garage retry #' + (i + 1) + '. Next retry will happen after ' + n.WAIT_TIME + ' milliseconds.');
+            console.log('_general retry #' + (i + 1) + '. Next retry will happen after ' + n.WAIT_TIME + ' milliseconds.');
             if (i < n.MAX_RETRIES - 1) {
                 yield call(delay, n.WAIT_TIME);
             }

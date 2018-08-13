@@ -8,7 +8,7 @@ import generalR from '../reducers/general'
 import postsR from '../reducers/posts'
 import usersR from '../reducers/users'
 
-// import authS from '../sagas/auth'
+import authS from '../sagas/auth'
 // import eventsS from '../sagas/events'
 import generalS from '../sagas/general'
 // import postsS from '../sagas/posts'
@@ -25,6 +25,7 @@ export const rootReducer = combineReducers({
 
 export function* rootSaga() {
     yield all([
+        ...authS,
         ...generalS,
     ])
 }
