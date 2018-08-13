@@ -1,7 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { CommonContainer } from '../components/Common';
+import { Article } from 'grommet'
 import * as GeneralActions from '../actions/GeneralActions'
 
 class HomeScreen extends React.Component {
@@ -10,8 +10,7 @@ class HomeScreen extends React.Component {
     }
     render() {
         return (
-            <CommonContainer>
-                <h1>Home</h1>
+            <Article align="center">
                 <p>Welcome home!</p>
                 <button onClick={async () => {
                     this.props.generalActions.setPrayerTimes({
@@ -72,7 +71,7 @@ class HomeScreen extends React.Component {
                 }}>
                     Update Jummah Times
                 </button>
-            </CommonContainer >
+            </Article >
         );
     }
 }

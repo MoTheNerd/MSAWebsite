@@ -11,7 +11,7 @@ export default function general(state = [], action) {
 			return {
 				...state,
 				isLoading: false,
-				prayerTimes: { ...action.payload.data, _id: undefined }
+				prayerTimes: { ...action.payload[0], _id: undefined }
 			}
 		case rr.GENERAL.PRAYERS_FETCH_FAILURE:
 			return {

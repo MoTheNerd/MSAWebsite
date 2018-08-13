@@ -1,15 +1,15 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { CommonContainer } from '../components/Common';
+import { Article } from 'grommet'
 
 class EventScreen extends React.Component {
     render() {
         return (
-            <CommonContainer>
+            <Article align="center">
                 <h1>Events</h1>
                 <p>Welcome events!</p>
-            </CommonContainer>
+            </Article>
         );
     }
 }

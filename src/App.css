@@ -1,7 +1,6 @@
 /*call this from className*/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 :root, a, .li, p, h1, h2, h3, h4, h5, h6 {
@@ -15,42 +14,20 @@
 #nav .li {
   margin: 0 2.5% 0 2.5%;
   display: inline;
-  padding: 5px 5px 10px 5px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
+  padding: 7px 10px 6px 10px;
+  user-select: none;
+  color: #000000;
   transition: all 0.35s;
-  text-decoration: none;
-  color: #333333;
   font-weight: 700 !important;
   text-transform: uppercase;
-}
-
-#nav li :hover {
-  border-bottom-color: #333333 !important;
-  padding-bottom: 5px;
-  transition: all 0.35s;
-}
-
-#nav li a {
   text-decoration: none;
-  color: #333333;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  transition: all 0.35s;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
 }
 
 #nav #active {
-  padding: 5px 5px 5px 5px !important;
-  background-color: #333333 !important;
-  border: none;
-}
-
-#nav #active {
-  color: #DDDDDD;
+  user-select: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #000000;
 }
 
 #nav {
@@ -59,9 +36,4 @@
   right: 25px;
   display: flex;
   flex-direction: row-reverse;
-}
-
-.mainContainer {
-  background-color: black; 
-  padding: 5em 2em 2em 2em;
 }

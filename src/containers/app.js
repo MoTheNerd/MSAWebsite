@@ -14,10 +14,10 @@ class App extends React.Component {
     return (
       <div>
         <header style={{ zIndex: 9999 }} id="nav">
-          <Link id={this.props ? this.props.currentPathName === '/profile' ? "active" : null : null} className="li" to="/profile">Profile</Link>
-          <Link id={this.props ? this.props.currentPathName === '/events' ? "active" : null : null} className="li" to="/events">Events</Link>
-          <Link id={this.props ? this.props.currentPathName === '/about' ? "active" : null : null} className="li" to="/about">About</Link>
-          <Link id={this.props ? this.props.currentPathName === '/' ? "active" : null : null} className="li" to="/">Home</Link>
+          <CustomLink currentPathName={this.props.currentPathName} pathname='/profile' >Profile</CustomLink>
+          <CustomLink currentPathName={this.props.currentPathName} pathname='/events' >Events</CustomLink>
+          <CustomLink currentPathName={this.props.currentPathName} pathname='/about' >About</CustomLink>
+          <CustomLink currentPathName={this.props.currentPathName} pathname='/' >Home</CustomLink>
         </header>
 
         <main>
@@ -28,6 +28,20 @@ class App extends React.Component {
         </main>
       </div>
     )
+  }
+}
+
+class CustomLink extends React.Component {
+  render() {
+    return (
+      <Link
+        id={this.props.currentPathName === this.props.pathname ? "active" : null}
+        className="li"
+        to={this.props.pathname}
+      >
+        {this.props.children}
+      </Link>
+    );
   }
 }
 
