@@ -16,6 +16,7 @@ import DAbout from './dashboard/AboutScreen'
 import DEvents from './dashboard/EventsScreen'
 import DMe from './dashboard/MeScreen'
 import DPrayerTimes from './dashboard/PrayerTimesScreen'
+import Danger from 'material-kit-react/components/Typography/Danger'
 
 
 class ProfileScreen extends React.Component {
@@ -87,17 +88,28 @@ class ProfileScreen extends React.Component {
         me: DMe,
         events: DEvents,
         prayers: DPrayerTimes,
-        about: DAbout
+        about: DAbout,
+        root: Box
     }
 
     renderSection(sp) {
         let Sec = this._sections[sp]
+        if (Sec === undefined) {
+            Sec = () => {
+                <Box full align="center" justify="center">
+                    <Danger>404 | Page not found</Danger>
+                </Box>
+            }
+        }
         return <Sec />
     }
 }
 
 function mapStateToProps(state, props) {
     let p = state.router.location.pathname.split("/")
+    if (p[p.length - 1] === "profile") {
+        p[p.length - 1] = "root"
+    }
     return {
         auth: state.auth,
         currentSP: p[p.length - 1]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Article, Header, Box } from 'grommet';
@@ -26,7 +26,7 @@ class App extends React.Component {
             </Box>
           </Header>
         </Article>
-        <main>
+        <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/events" component={Events} />
@@ -38,7 +38,7 @@ class App extends React.Component {
           <Route exact path="/profile/login" component={Login} />
           <Route exact path="/profile/signup" component={Login} />
           <Route component={Error404}/>
-        </main>
+        </Switch>
       </div>
     )
   }
