@@ -16,6 +16,13 @@ import CustomInput from 'material-kit-react/components/CustomInput/CustomInput'
 import Background from '../assets/img/backdrop.png'
 
 class LoginScreen extends React.Component {
+
+    componentDidMount() {
+        if (this.props.auth.status === "AUTHORIZED") {
+            this.props.history.push("/profile")
+        }
+    }
+    
     state = {
         signIn: {
             email: "",
