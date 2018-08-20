@@ -20,6 +20,7 @@ class MeScreen extends React.Component {
         this.state = {
             name: this.props.auth.name,
             email: this.props.auth.email,
+            role: this.props.auth.role,
             description: this.props.auth.description,
             year: this.props.auth.discipline.year,
             faculty: this.props.auth.discipline.faculty,
@@ -115,6 +116,7 @@ class MeScreen extends React.Component {
                             email: this.state.email,
                             name: this.state.name,
                             description: this.state.description,
+                            role: this.state.role,
                             discipline: {
                                 year: this.state.year,
                                 faculty: this.state.faculty,
