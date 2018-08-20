@@ -50,6 +50,22 @@ export default function auth(state = [], action) {
 				isLoading: false,
 				status: "UNAUTHORIZED"
 			}
+		case rr.AUTH.UPDATE_REQUEST:
+			return {
+				...state,
+				isLoading: true,
+			}
+		case rr.AUTH.UPDATE_SUCCESS:
+			return {
+				...state,
+				isLoading: false,
+				...action.payload.data,
+			}
+		case rr.AUTH.UPDATE_FAILURE:
+			return {
+				...state,
+				isLoading: false,
+			}
 		default:
 			return state
 	}

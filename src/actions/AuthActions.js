@@ -19,3 +19,10 @@ export function signOut() {
         type: rr.AUTH.SIGN_OUT_REQUEST
     }
 }
+
+export function updateInfo(userInfo) {
+    return {
+        type: rr.AUTH.UPDATE_REQUEST,
+        payload: userInfo
+    }
+}

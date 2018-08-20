@@ -8,4 +8,5 @@ export const GENERAL = {
 export const AUTH = {
     signIn: (userInfo) => { return post("/auth/login", userInfo) },
     signUp: (userInfo) => { return post("/auth/create", userInfo) },
+    update: (userInfo) => { return post("/auth/update", userInfo) },
 }

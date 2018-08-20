@@ -47,6 +47,27 @@ function* _createAccount(userInfo) {
     }
 }
 
+function* _update(userInfo) {
+    for (let i = 0; i < n.MAX_RETRIES; i++) {
+        try {
+            const response = yield call(a.update, userInfo.payload)
+            console.log(response)
+            if (response.success === false) throw response
+            else yield put({ type: rr.AUTH.UPDATE_SUCCESS, payload: response });
+            break;
+        } catch (err) {
+            console.error(err);
+            console.log('_auth retry #' + (i + 1) + '. Next retry will happen after ' + n.WAIT_TIME + ' milliseconds.');
+            if (i < n.MAX_RETRIES - 1) {
+                yield call(delay, n.WAIT_TIME);
+            }
+            else {
+                yield put({ type: rr.AUTH.UPDATE_FAILURE });
+            }
+        }
+    }
+}
+
 function* _signOut() {
     yield put({ type: rr.AUTH.SIGN_OUT_SUCCESS });
 }
@@ -56,4 +77,5 @@ export default [
     takeLatest(rr.AUTH.SIGN_IN_REQUEST, _signIn),
     takeLatest(rr.AUTH.CREATE_REQUEST, _createAccount),
     takeLatest(rr.AUTH.SIGN_OUT_REQUEST, _signOut),
+    takeLatest(rr.AUTH.UPDATE_REQUEST, _update)
 ]
