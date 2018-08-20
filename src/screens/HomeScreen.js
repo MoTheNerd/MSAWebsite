@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Article } from 'grommet'
 import * as GeneralActions from '../actions/GeneralActions'
+import Background from '../assets/img/backdrop.png'
 
 class HomeScreen extends React.Component {
     componentDidMount() {
@@ -10,7 +11,7 @@ class HomeScreen extends React.Component {
     }
     render() {
         return (
-            <Article align="center">
+            <Article full justify="center" align="center" style={{ backgroundImage: `url(${Background})`, backgroundOpacity: 0.3 }}>
                 <p>Welcome home!</p>
                 <button onClick={async () => {
                     this.props.generalActions.setPrayerTimes({
@@ -91,6 +92,10 @@ function mapDispatchToProps(dispatch) {
     return {
         generalActions: bindActionCreators(GeneralActions, dispatch),
     }
+}
+
+async function swaggit() {
+    console.log(await fetch("https://mosque.me/prayer-times/mce/getdata.php"))
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

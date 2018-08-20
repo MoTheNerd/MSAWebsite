@@ -48,7 +48,7 @@ function* _createAccount(userInfo) {
 }
 
 function* _signOut() {
-    put({ type: rr.AUTH.SIGN_OUT_REQUEST });
+    yield put({ type: rr.AUTH.SIGN_OUT_SUCCESS });
 }
 
 

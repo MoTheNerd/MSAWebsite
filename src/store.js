@@ -1,4 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
@@ -8,6 +10,13 @@ import createSagaMiddleware from 'redux-saga';
 export const history = createHistory()
 
 const sagaMiddleWare = createSagaMiddleware(rootSaga);
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const initialState = {}
 const enhancers = []
@@ -30,12 +39,11 @@ const composedEnhancers = compose(
   ...enhancers
 )
 
-const store = createStore(
-  connectRouter(history)(rootReducer),
+export const store = createStore(
+  connectRouter(history)(persistedReducer),
   initialState,
   composedEnhancers
 )
 
 sagaMiddleWare.run(rootSaga)
-
-export default store
+export let persistor = persistStore(store)
