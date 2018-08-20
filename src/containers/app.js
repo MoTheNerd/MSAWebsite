@@ -10,6 +10,7 @@ import Events from '../screens/EventsScreen'
 import Profile from '../screens/ProfileScreen'
 import Login from '../screens/LoginScreen'
 import About from '../screens/AboutScreen'
+import Error404 from '../screens/Error404'
 
 class App extends React.Component {
   render() {
@@ -36,6 +37,7 @@ class App extends React.Component {
           <Route exact path="/profile/about" component={Profile}></Route>
           <Route exact path="/profile/login" component={Login} />
           <Route exact path="/profile/signup" component={Login} />
+          <Route component={Error404}/>
         </main>
       </div>
     )
